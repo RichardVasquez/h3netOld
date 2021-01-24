@@ -1,8 +1,12 @@
-# H3NET: A Hexagonal Hierarchical Geospatial Indexing System In C# #
+# Going into archive soon!
+
+3.7.1 is coming out, and I pretty much broke everything in terms of how the 3.1.1 version works, so I've got a private duplicate archive going on currently. I know, not how Git is supposed to work, but yeah, I'm not going to be maintaining this version any more with the new stuff coming in.
+
+## H3NET: A Hexagonal Hierarchical Geospatial Indexing System In C# #
 
 H3Net is a geospatial indexing system using hexagonal grid that can be (approximately) subdivided into finer and finer hexagonal grids, combining the benefits of a hexagonal grid with [S2](https://code.google.com/archive/p/s2-geometry-library/)'s hierarchical subdivisions, mostly translated from the original C code from [Uber](https://github.com/uber)'s [H3](https://github.com/uber/h3) project.
 
-# Caveat Emptor
+## Caveat Emptor
 
 I have a personal project I'm working on that needs hexagons all over the world, and I've been using [DGGRID](http://www.discreteglobalgrids.org/software/) for generating patches of data across the globe.  Seeing this code come out, and pre-oriented for [Dymaxion project](https://en.wikipedia.org/wiki/Dymaxion_map), I did the conversion to C# for various reasons, accepting the tradeoff in speed.  
 
@@ -12,10 +16,10 @@ Updates will be provided as I tweak things, but the main project using this libr
 
 Additionally, you should probably familiarize yourself with the h3net.Api structs contained in Structs.cs as that's what the API returns its results in, and the initial structs and data classes will eventually be deprecated.
 
-## Testing
+### Testing
 I've converted the basic test suites under the project h3tests using [Nunit](https://github.com/nunit).  polyfillTransmeridianComplex doesn't work.  PRs that address that one test will get my attention the quickest.
 
-## Installing
+### Installing
 
 In the solution, build the h3net project into a DLL.  You can then use the h3net.Api namespace to access the following list.  See [Uber's H3 API](https://uber.github.io/h3/#/documentation/api-reference/indexing) for pointers regarding use.  There's some signature differences explained after the list.
 
@@ -72,8 +76,8 @@ In the solution, build the h3net project into a DLL.  You can then use the h3net
 
 The primary difference between my API implementation and Uber's is that I'm not expecting pointers to preallocated memory to store the results.  Barring the linked data types, you're going to receive a single instance/array collection of a C# value type.  Immutable, if it's a struct.
 
-### Roadmap
+#### Roadmap
 There's a **lot** of code in the h3net.Code namespace where I just used ref and passed around blobs of data, and then had to finesse accesing an indexed value by duplicating it, feeding it through the translated code, then putting it back into the original collection.  I'm not proud of that, and that's likely the first part that gets steam cleaned.
 
-#### Version
+##### Version
 I will be keeping the version number the same as the functionality of H3 that I'm matching.
