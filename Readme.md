@@ -1,6 +1,12 @@
-# Going into archive soon!
+# Gone into archive!
 
-3.7.1 is coming out, and I pretty much broke everything in terms of how the 3.1.1 version works, so I've got a private duplicate archive going on currently. I know, not how Git is supposed to work, but yeah, I'm not going to be maintaining this version any more with the new stuff coming in.
+I've changed many things, to the point where code relying on the 3.1.1 compatible API I created isn't going to work with the new 3.7.1 format.
+
+Since it's also been 2 years without changes from me, I'm not expecting a lot of concern.
+
+Either way, I'm archiving this, and recommending that you go look at the new version which works better under the hood, at https://github.com/RichardVasquez/h3net
+
+The URL is the same as this old one, but it's got the up to date code.
 
 ## H3NET: A Hexagonal Hierarchical Geospatial Indexing System In C# #
 
